@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculateur de Moyenne</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; padding: 50px; text-align: center; }
+        .card { background: white; max-width: 400px; margin: auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input { width: 80%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #27ae60; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; width: 85%; }
+        #resultat { margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: #2c3e50; }
+        .back { margin-top: 20px; display: block; color: #7f8c8d; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Calculer la Moyenne</h2>
+        <input type="number" id="t1" placeholder="Note Travail 1" max="20">
+        <input type="number" id="t2" placeholder="Note Travail 2" max="20">
+        <input type="number" id="t3" placeholder="Note Travail 3" max="20">
+        <button onclick="calculer()">Calculer</button>
+        <div id="resultat"></div>
+        <a href="index.html" class="back">← Retour à l'accueil</a>
+    </div>
+
+    <script>
+        function calculer() {
+            let n1 = parseFloat(document.getElementById('t1').value) || 0;
+            let n2 = parseFloat(document.getElementById('t2').value) || 0;
+            let n3 = parseFloat(document.getElementById('t3').value) || 0;
+            let moyenne = (n1 + n2 + n3) / 3;
+            document.getElementById('resultat').innerHTML = "Moyenne : " + moyenne.toFixed(2) + " / 20";
+        }
+    </script>
+</body>
+</html>
